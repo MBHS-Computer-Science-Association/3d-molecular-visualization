@@ -6,6 +6,10 @@ class Element
 {
 public:
     int atomicNumber;
+    int getAtomicNumber()
+    {
+        return atomicNumber;
+    }
 };
 
 int main()
@@ -14,7 +18,8 @@ int main()
 
     Element hydrogen;
     hydrogen.atomicNumber = 1;
-    cout << "The atomic number of hydrogen is" << hydrogen.atomicNumber << endl;
+    cout << "The atomic number of hydrogen is" <<
+    hydrogen.getAtomicNumber() << endl;
 
     for(int i = 0; i <= 100; i++)
     {
