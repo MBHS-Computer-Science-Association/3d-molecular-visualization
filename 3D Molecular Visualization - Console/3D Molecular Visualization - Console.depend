@@ -2,6 +2,12 @@
 1443556562 source:c:\users\nicholas\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
 	<iostream>
 
-1443626136 source:c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
+1443638052 source:c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
 	<iostream>
+	"include/MyClass.h"
+
+1443638083 c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\include\myclass.h
+
+1443637974 source:c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\src\myclass.cpp
+	"MyClass.h"
 

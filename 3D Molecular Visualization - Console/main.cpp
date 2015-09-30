@@ -1,21 +1,8 @@
 #include <iostream>
+#include "include/MyClass.h"
+#include "include/Element.h"
 
 using namespace std;
-
-class Element
-{
-public:
-    int atomicNumber;
-    int getAtomicNumber()
-    {
-        return atomicNumber;
-    }
-
-    void setAtomicNumber(int value)
-    {
-        atomicNumber = value;
-    }
-};
 
 int main()
 {
@@ -25,6 +12,9 @@ int main()
     hydrogen.setAtomicNumber(1);
     cout << "The atomic number of hydrogen is: " <<
     hydrogen.getAtomicNumber() << endl;
+
+    MyClass b;
+    cout << b.add() << endl;
 
     for(int i = 0; i <= 100; i++)
     {

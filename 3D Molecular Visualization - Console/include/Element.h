@@ -6,8 +6,8 @@ class Element
 {
     public:
         int atomicNumber;
-        Element();
-        virtual ~Element();
+        int getAtomicNumber();
+        void setAtomicNumber(int value);
     protected:
     private:
 };

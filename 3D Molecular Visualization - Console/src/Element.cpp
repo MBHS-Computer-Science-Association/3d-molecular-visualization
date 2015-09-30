@@ -1,19 +1,13 @@
 #include "Element.h"
 
-class Element
+int Element::atomicNumber;
+
+int Element::getAtomicNumber()
 {
+    return atomicNumber;
+}
 
-public:
-    int atomicNumber;
-
-private:
-    Element()
-    {
-        //ctor
-    }
-
-    ~Element()
-    {
-        //dtor
-    }
-};
+void Element::setAtomicNumber(int value)
+{
+    atomicNumber = value;
+}
