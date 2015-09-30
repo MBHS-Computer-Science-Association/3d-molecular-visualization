@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -17,19 +18,31 @@ public:
     }
 };
 
+class Reaction
+{
+public:
+    string type;
+    void setRxnType(string rxn)
+    {
+        type = rxn;
+    }
+    string getRxnType()
+    {
+        return type;
+    }
+
+};
+
 int main()
 {
-    int a[100];
-
     Element hydrogen;
     hydrogen.setAtomicNumber(1);
     cout << "The atomic number of hydrogen is: " <<
     hydrogen.getAtomicNumber() << endl;
 
-    for(int i = 0; i <= 100; i++)
-    {
-        cout<<i<< " ";
-    }
+    Reaction rxn;
+    rxn.setRxnType("Redox");
+    cout << rxn.getRxnType();
 
     cin.clear(); // reset any error flags
     cin.ignore(32767, '\n'); // ignore any characters in the input buffer until we find an enter character

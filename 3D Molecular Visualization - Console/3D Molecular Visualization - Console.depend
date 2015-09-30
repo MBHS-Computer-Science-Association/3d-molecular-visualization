@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1443558292 source:c:\users\nicholas\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
+1443643212 source:c:\users\nicholas\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
 	<iostream>
+	<string>
 
 1443626136 source:c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
 	<iostream>
