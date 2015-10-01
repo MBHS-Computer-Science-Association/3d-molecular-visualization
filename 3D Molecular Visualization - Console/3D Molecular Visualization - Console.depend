@@ -1,8 +1,23 @@
 # depslib dependency file v1.0
-1443643212 source:c:\users\nicholas\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
+1443556562 source:c:\users\nicholas\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
+	<iostream>
+
+1443710512 source:c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
 	<iostream>
 	<string>
+	"include/MyClass.h"
+	"include/Element.h"
 
-1443626136 source:c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\main.cpp
-	<iostream>
+1443667549 c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\include\myclass.h
+
+1443667549 source:c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\src\myclass.cpp
+	"MyClass.h"
+
+1443710568 c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\include\element.h
+
+1443710350 c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\include\reaction.h
+	<string>
+
+1443710574 source:c:\users\thai nguyen\documents\github\3d-molecular-visualization\3d molecular visualization - console\src\element.cpp
+	"Element.h"
 
