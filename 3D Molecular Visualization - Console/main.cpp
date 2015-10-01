@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <string>
+#include <cstdlib>
 #include "include/MyClass.h"
 #include "include/Element.h"
 
@@ -8,15 +9,15 @@ using namespace std;
 
 int main()
 {
+    system("echo Hello World");
+    system("color 5f");
     int value = 2;
     Element hydrogen;
     hydrogen.setAtomicNumber(1);
     cout << "The atomic number of hydrogen is: " <<
     hydrogen.getAtomicNumber() << endl;
 
-    cin.clear(); // reset any error flags
-    cin.ignore(32767, '\n'); // ignore any characters in the input buffer until we find an enter character
-    cin.get(); // get one more char from the user
+    system("PAUSE");
 
     return 0;
 }
