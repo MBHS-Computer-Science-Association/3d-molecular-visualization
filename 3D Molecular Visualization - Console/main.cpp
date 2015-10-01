@@ -9,7 +9,8 @@ using namespace std;
 
 int main()
 {
-    Element hydrogen = new Element(1);
+    int value = 2;
+    Element hydrogen;
     hydrogen.setAtomicNumber(1);
     cout << "The atomic number of hydrogen is: " <<
     hydrogen.getAtomicNumber() << endl;

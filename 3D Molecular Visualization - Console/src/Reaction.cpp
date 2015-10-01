@@ -1,7 +1,7 @@
 #include "Reaction.h"
+#include <string>
 
-
-string Reaction::type;
+std::string Reaction::type;
 
 void Reaction::setRxnType(string rxn)
 {
@@ -11,4 +11,4 @@ void Reaction::setRxnType(string rxn)
 string Reaction::getRxnType()
 {
     return type;
-}
+};

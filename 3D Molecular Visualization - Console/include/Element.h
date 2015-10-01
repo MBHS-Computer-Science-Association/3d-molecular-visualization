@@ -5,12 +5,13 @@
 class Element
 {
     public:
-        Element(int atomicNumber);
-        int atomicNumber;
+        Element();
+        Element(int value);
         int getAtomicNumber();
         void setAtomicNumber(int value);
     protected:
     private:
+        int atomicNumber;
 };
 
 #endif // ELEMENT_H

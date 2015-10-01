@@ -1,11 +1,17 @@
 #include "Element.h"
 
-Element::Element(int atomicNumber)
+
+
+Element::Element()
 {
-    this.atomicNumber = atomicNumber;
+
+}
+// int Element::atomicNumber;
+Element::Element(int value)
+{
+    setAtomicNumber(value);
 }
 
-int Element::atomicNumber;
 
 int Element::getAtomicNumber()
 {
