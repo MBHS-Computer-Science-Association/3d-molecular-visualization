@@ -8,8 +8,8 @@ int main()
 {
     int a[100];
 
-    Element hydrogen;
-    hydrogen.setAtomicNumber(1);
+    Element hydrogen = new Element(1);
+    // hydrogen.setAtomicNumber(1);
     cout << "The atomic number of hydrogen is: " <<
     hydrogen.getAtomicNumber() << endl;
 
