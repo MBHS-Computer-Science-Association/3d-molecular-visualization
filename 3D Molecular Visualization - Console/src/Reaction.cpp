@@ -11,4 +11,4 @@ void Reaction::setRxnType(string rxn)
 string Reaction::getRxnType()
 {
     return type;
-};
+}

@@ -6,7 +6,7 @@ Element::Element()
 {
 
 }
-// int Element::atomicNumber;
+//int Element::atomicNumber;
 Element::Element(int value)
 {
     setAtomicNumber(value);
