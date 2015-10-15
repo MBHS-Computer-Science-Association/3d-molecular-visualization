@@ -1,6 +1,7 @@
 #include <iostream>
-
+#include <vector>
 #include <string>
+#include <fstream>
 #include <cstdlib>
 #include "include/MyClass.h"
 #include "include/Element.h"
@@ -15,25 +16,18 @@ int main()
     system("echo Hello World");
     system("color 5f");
 
-    int array[5] = {2, 5, 3, 1, 4};
-    cout << search(array, 5, 3);
-    sort(array, 5);
-    cout << endl << endl;
-    for (int i = 0; i < 5; i++)
-    {
-        cout << (int)array[i] << " ";
+    vector<string> lineVector;
+    ifstream input("src/Element.cpp");
+    string line;
+    while(getline(input, line))
+        lineVector.push_back(line);
+
+    vector<string>::const_iterator molecIterator;
+    for (molecIterator = lineVector.begin(); molecIterator != lineVector.end()) {
+        cout << *molecIterator + " " << endl;
     }
-    cout << endl << endl;
-    cout << array[3];
 
 
-    //int value = 2;
-    //Element hydrogen;
-    //hydrogen.setAtomicNumber(1);
-    //cout << "The atomic number of hydrogen is: " <<
-    //hydrogen.getAtomicNumber() << endl;
-
-    //system("PAUSE");
     return 0;
 }
 
