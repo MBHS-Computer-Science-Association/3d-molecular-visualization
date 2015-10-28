@@ -8,39 +8,44 @@
 
 using namespace std;
 
-int search(int array[], int length, int value);
+int search(vector<int> intVector, int value);
 void sort(int array[], int length);
 
 int main()
 {
-    system("echo Hello World");
     system("color 5f");
 
     vector<string> lineVector;
-    ifstream input("src/Element.cpp");
+    ifstream input("src/elements.dat");
     string line;
     while(getline(input, line))
         lineVector.push_back(line);
 
     vector<string>::const_iterator molecIterator;
-    for (molecIterator = lineVector.begin(); molecIterator != lineVector.end()) {
+    for (molecIterator = lineVector.begin(); molecIterator != lineVector.end(); molecIterator++) {
         cout << *molecIterator + " " << endl;
     }
 
+    vector<int> intVector;
+    for (int i = 1; i < 5; i++)
+        intVector.push_back(i);
+    search(intVector, 3);
 
     return 0;
 }
 
-int search(int array[], int length, int value)
+// returns 1 if found, returns 0 if not found
+int search(vector<int> intVector, int value)
 {
-    for (int i = 0; i < length; i++)
+    vector<int>::iterator iter;
+    for (iter = intVector.begin(); iter != intVector.end(); iter++)
     {
-        if (array[i] == value)
+        if (*iter == value)
         {
-            return i;
+            return (iter - intVector.begin());
         }
     }
-    return -1;
+    return 0;
 }
 
 void sort(int array[], int length) {
