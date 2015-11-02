@@ -1,6 +1,6 @@
 package simulation;
 
-public class Element implements Particle {
+public final class Element implements Particle {
 
 	private final int atomicNumber;
 	private int atomicMass;
