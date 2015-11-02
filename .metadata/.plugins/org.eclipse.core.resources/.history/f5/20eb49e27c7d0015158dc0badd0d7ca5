@@ -19,13 +19,9 @@ public class ArrayListOperations {
 		return arrayList;
 	}
 	
-	public static <T> int search(ArrayList<T> arrayList, T obj) {
-		for (int i = 0; i < arrayList.size(); i++) {
-			if (arrayList.get(i).equals(obj)) {
-				return i;
-			}
-		}
-		return -1;
+	public static <T> int search(ArrayList<T> arrayList) {
+		for (int i = 0; i < arrayList.)
+		return 0;
 		
 	}
 }
