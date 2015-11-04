@@ -37,6 +37,10 @@ public class Vector3d {
 		return z;
 	}
 	
+	public Vector3d getDirectionTo(Vector3d other) {
+		return new Vector3d(other.x - this.x, other.y - this.y, other.z - this.z).getUnitVector();
+	}
+	
 	public Vector3d scalarMultiply(double magnitude) {
 		return new Vector3d(this.x * magnitude, this.y * magnitude, this.z* magnitude);
 	}
