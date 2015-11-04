@@ -1,6 +1,6 @@
 package simulation;
 
-public class Element implements Particle {
+public class Element extends Particle {
 
 	private final int atomicNumber;
 	private int atomicMass;
@@ -15,7 +15,6 @@ public class Element implements Particle {
 		this.atomicMass = atomicMass;
 		this.state = state;
 	}
-	@Override
 	public double getMolarMass() {
 		return atomicMass;
 	}

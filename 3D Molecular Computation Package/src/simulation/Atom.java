@@ -50,7 +50,7 @@ public class Atom extends Locatable implements TimeUpdatable {
 		return charge;
 	}
 	
-	public Vector3d getCoulombicForcesWith(Atom other) {
+	public double getCoulombicForcesWith(Atom other) {
 		return Physics.calculateCoulombicAttractionNewtons(this.charge, other.charge, this.getDistanceTo(other));
 	}
 
