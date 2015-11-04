@@ -1,16 +1,16 @@
 package simulation;
 
-public interface Particle {
+public abstract class Particle {
 	/**
 	 * @return the molar mass of the particle.
 	 */
-	double getMolarMass();
+	public abstract double getMolarMass();
 	
 	/**
 	 * Removes the particle from the simulation.
 	 * @return if the process was successful
 	 */
-	default boolean destroy() {
+	public boolean destroy() {
 		return false;
 	}
 }

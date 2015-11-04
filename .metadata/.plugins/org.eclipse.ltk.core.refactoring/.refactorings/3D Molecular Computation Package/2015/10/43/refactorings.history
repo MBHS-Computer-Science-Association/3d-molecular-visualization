@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;algorithms.Sorting&apos; to &apos;ArrayListOperations&apos;&#x0D;&#x0A;- Original project: &apos;3D Molecular Computation Package&apos;&#x0D;&#x0A;- Original element: &apos;algorithms.Sorting&apos;&#x0D;&#x0A;- Renamed element: &apos;algorithms.ArrayListOperations&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Sorting&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;algorithms{Sorting.java[Sorting" matchStrategy="1" name="ArrayListOperations" qualified="false" references="true" similarDeclarations="false" stamp="1445724232106" textual="false" version="1.0"/>
-</session>

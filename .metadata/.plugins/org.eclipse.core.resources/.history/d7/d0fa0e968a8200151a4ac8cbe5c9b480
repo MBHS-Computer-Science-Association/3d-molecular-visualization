@@ -3,12 +3,10 @@ package simulation;
 import java.util.ArrayList;
 import java.util.List;
 
-import algorithms.Physics;
 import motion.Vector3d;
 
-public class Atom extends Locatable implements TimeUpdatable {
+public class Atom implements TimeUpdatable {
 	double charge;
-	double mass;
 	
 	List<Vector3d> appliedForces = new ArrayList<>();
 	Vector3d force;
@@ -18,8 +16,7 @@ public class Atom extends Locatable implements TimeUpdatable {
 	private double y;
 	private double z;
 	
-	public Atom(double charge, double x, double y, double z) {
-		super(x,y,z);
+	public Atom(double charge) {
 		this.charge = charge;
 	}
 	
@@ -37,10 +34,6 @@ public class Atom extends Locatable implements TimeUpdatable {
 		return new Vector3d(x, y, z);
 	}
 	
-	public double getDistanceTo(Atom other) {
-		// finish implementation
-		return 0;
-	}
 	
 	public void applyForce(Vector3d force) {
 		appliedForces.add(force);
@@ -48,10 +41,6 @@ public class Atom extends Locatable implements TimeUpdatable {
 	
 	public double getCharge() {
 		return charge;
-	}
-	
-	public Vector3d getCoulombicForcesWith(Atom other) {
-		return Physics.calculateCoulombicAttractionNewtons(this.charge, other.charge, this.getDistanceTo(other));
 	}
 
 	@Override
