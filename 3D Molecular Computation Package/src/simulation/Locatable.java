@@ -1,5 +1,7 @@
 package simulation;
 
+import java.math.BigDecimal;
+
 import motion.Vector3d;
 
 /**
@@ -8,17 +10,17 @@ import motion.Vector3d;
  *
  */
 public abstract class Locatable {
-	private double x;
-	private double y;
-	private double z;
+	private BigDecimal x;
+	private BigDecimal y;
+	private BigDecimal z;
 	
-	public Locatable(double x, double y, double z) {
+	public Locatable(BigDecimal x, BigDecimal y, BigDecimal z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 	
-	public double getDistanceTo(Locatable other) {
+	public BigDecimal getDistanceTo(Locatable other) {
 		return Math.sqrt((this.x - other.x)*(this.x - other.x) + 
 				(this.y - other.y)*(this.y - other.y) + 
 						(this.z - other.z)*(this.z - other.z));
@@ -30,15 +32,15 @@ public abstract class Locatable {
 		z += displacement.getZ() * (milliseconds / 1000);
 	}
 	
-	public double getX() {
+	public BigDecimal getX() {
 		return x;
 	}
 
-	public double getY() {
+	public BigDecimal getY() {
 		return y;
 	}
 
-	public double getZ() {
+	public BigDecimal getZ() {
 		return z;
 	}
 

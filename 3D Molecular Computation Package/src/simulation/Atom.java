@@ -1,5 +1,6 @@
 package simulation;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,14 +8,14 @@ import algorithms.Physics;
 import motion.Vector3d;
 
 public class Atom extends Locatable implements TimeUpdatable {
-	double coulombs;
-	double grams;
+	BigDecimal coulombs;
+	BigDecimal grams;
 	
 	List<Vector3d> appliedForces = new ArrayList<>();
 	Vector3d force;
 	Vector3d velocity;
 	
-	public Atom(double coulombs, double grams, double x, double y, double z) {
+	public Atom(BigDecimal coulombs, BigDecimal grams, BigDecimal x, BigDecimal y, BigDecimal z) {
 		super(x,y,z);
 		velocity = new Vector3d();
 		this.coulombs = coulombs;
@@ -22,9 +23,9 @@ public class Atom extends Locatable implements TimeUpdatable {
 	}
 	
 	public Vector3d getResultantForce() {
-		double x = 0;
-		double y = 0;
-		double z = 0;
+		BigDecimal x = 0;
+		BigDecimal y = 0;
+		BigDecimal z = 0;
 		
 		for (Vector3d force : appliedForces) {
 			x += force.getX();
@@ -35,7 +36,7 @@ public class Atom extends Locatable implements TimeUpdatable {
 		return new Vector3d(x, y, z);
 	}
 	
-	public double getDistanceTo(Atom other) {
+	public BigDecimal getDistanceTo(Atom other) {
 		// finish implementation
 		return 0;
 	}
@@ -44,11 +45,11 @@ public class Atom extends Locatable implements TimeUpdatable {
 		appliedForces.add(force);
 	}
 	
-	public double getCharge() {
+	public BigDecimal getCharge() {
 		return coulombs;
 	}
 	
-	public double getCoulombicForcesWith1(Atom other) {
+	public BigDecimal getCoulombicForcesWith1(Atom other) {
 		return Physics.calculateCoulombicAttractionNewtons(this.coulombs, other.coulombs, this.getDistanceTo(other));
 
 	}
@@ -66,7 +67,7 @@ public class Atom extends Locatable implements TimeUpdatable {
 	}
 
 	@Override
-	public void update(double milliseconds) {
+	public void update(BigDecimal milliseconds) {
 		update();
 		this.displace(velocity, milliseconds);
 	}
