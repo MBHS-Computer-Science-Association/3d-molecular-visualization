@@ -20,12 +20,9 @@ public class Vector3d {
 		this.z = v.getZ();
 	}
 	
-	public Vector3d(Vector3d direction, double magnitude) {
-		Vector3d result = new Vector3d(direction.getUnitVector().scalarMultiply(magnitude));
-		this.x = result.x;
-		this.y = result.y;
-		this.z = result.z;
-	}
+//	public Vector3d(Vector3d direction, double magnitude) {
+//		
+//	}
 	
 	public double getX(){
 		return x;
@@ -35,14 +32,6 @@ public class Vector3d {
 	}
 	public double getZ(){
 		return z;
-	}
-	
-	public Vector3d scalarMultiply(double magnitude) {
-		return new Vector3d(this.x * magnitude, this.y * magnitude, this.z* magnitude);
-	}
-	
-	public Vector3d getUnitVector() {
-		return new Vector3d(x/getMagnitude(), y/getMagnitude(), z/getMagnitude());
 	}
 	
 	public double getMagnitude() {
