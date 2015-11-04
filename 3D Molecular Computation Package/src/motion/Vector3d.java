@@ -37,6 +37,12 @@ public class Vector3d {
 		return z;
 	}
 	
+	public void add(Vector3d vector) {
+		x += vector.x;
+		y += vector.y;
+		z += vector.z;
+	}
+	
 	public Vector3d getDirectionTo(Vector3d other) {
 		return new Vector3d(other.x - this.x, other.y - this.y, other.z - this.z).getUnitVector();
 	}
@@ -51,5 +57,9 @@ public class Vector3d {
 	
 	public double getMagnitude() {
 		return Math.sqrt(x*x + y*y + z*z);
+	}
+	
+	public String toString() {
+		return "";
 	}
 }

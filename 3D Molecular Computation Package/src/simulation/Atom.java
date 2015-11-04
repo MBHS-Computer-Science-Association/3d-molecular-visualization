@@ -7,20 +7,17 @@ import algorithms.Physics;
 import motion.Vector3d;
 
 public class Atom extends Locatable implements TimeUpdatable {
-	double charge;
-	double mass;
+	double coulombs;
+	double grams;
 	
 	List<Vector3d> appliedForces = new ArrayList<>();
 	Vector3d force;
 	Vector3d velocity;
 	
-	private double x;
-	private double y;
-	private double z;
-	
-	public Atom(double charge, double x, double y, double z) {
+	public Atom(double coulombs, double grams, double x, double y, double z) {
 		super(x,y,z);
-		this.charge = charge;
+		this.coulombs = coulombs;
+		this.grams = grams;
 	}
 	
 	public Vector3d getResultantForce() {
@@ -47,26 +44,35 @@ public class Atom extends Locatable implements TimeUpdatable {
 	}
 	
 	public double getCharge() {
-		return charge;
+		return coulombs;
 	}
 	
 	public double getCoulombicForcesWith1(Atom other) {
-		return Physics.calculateCoulombicAttractionNewtons(this.charge, other.charge, this.getDistanceTo(other));
+		return Physics.calculateCoulombicAttractionNewtons(this.coulombs, other.coulombs, this.getDistanceTo(other));
 
 	}
 	public Vector3d getCoulombicForcesWith(Atom other) {
-		return new Vector3d(this.getVector().getDirectionTo(other.getVector()) , Physics.calculateCoulombicAttractionNewtons(this.charge, other.charge, this.getDistanceTo(other)));
+		return new Vector3d(this.getVector().getDirectionTo(other.getVector()) , Physics.calculateCoulombicAttractionNewtons(this.coulombs, other.coulombs, this.getDistanceTo(other)));
 
 	}
 
 	@Override
 	public void update() {
 		force = getResultantForce();
+		Vector3d acceleration = force.scalarMultiply(1/(1000 * grams));
+		velocity.add(acceleration);
 	}
 
 	@Override
-	public void update(long milliseconds) {
-		// TODO Auto-generated method stub
-		
+	public void update(double milliseconds) {
+		update();
+		this.displace(velocity, milliseconds);
+	}
+	
+	public String toString() {
+		StringBuilder result = new StringBuilder();
+		result.append("x: " + super.getX() + " y: " + super.getY() + " z: " + super.getZ() + '\n');
+		result.append("Velocity - " + "x: " + velocity.getX() + " y: " + velocity.getY() + " z: " + velocity.getZ());
+		return result.toString();
 	}
 }
