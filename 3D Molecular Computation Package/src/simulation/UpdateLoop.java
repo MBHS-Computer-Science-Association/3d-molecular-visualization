@@ -3,6 +3,7 @@ package simulation;
 public class UpdateLoop implements Runnable{
 
 	public void update() {
+		System.out.println("updating without time");
 		for (Updatable a : MolecularSimulation.entityList) {
 			if (a instanceof Atom) {
 				((Atom) a).appliedForces.clear();
@@ -17,9 +18,11 @@ public class UpdateLoop implements Runnable{
 	
 	public void update(double milliseconds) {
 		update();
+		System.out.println("updating with time: " + MolecularSimulation.entityList);
 		for (Updatable u : MolecularSimulation.entityList) {
 			if (u instanceof TimeUpdatable) {
 				((TimeUpdatable) u).update(milliseconds);
+				System.out.println(u);
 			}
 		}
 	}
@@ -39,7 +42,7 @@ public class UpdateLoop implements Runnable{
 			lastTime = now;
 			if (delta >= 1.0) {
 				try{	
-					update();
+//					update();
 				} catch(Exception e){
 					e.printStackTrace();
 					System.err.println("Update " + updates + " failed at " + System.currentTimeMillis());
@@ -50,6 +53,7 @@ public class UpdateLoop implements Runnable{
 	
 			if (System.currentTimeMillis() - timer > 1000) {
 				timer += 1000;
+				update(1000);
 				System.out.println(updates + " ups");
 				updates = 0;
 			}

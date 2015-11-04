@@ -16,6 +16,7 @@ public class Atom extends Locatable implements TimeUpdatable {
 	
 	public Atom(double coulombs, double grams, double x, double y, double z) {
 		super(x,y,z);
+		velocity = new Vector3d();
 		this.coulombs = coulombs;
 		this.grams = grams;
 	}
@@ -59,6 +60,7 @@ public class Atom extends Locatable implements TimeUpdatable {
 	@Override
 	public void update() {
 		force = getResultantForce();
+		System.out.println(force.getMagnitude());
 		Vector3d acceleration = force.scalarMultiply(1/(1000 * grams));
 		velocity.add(acceleration);
 	}
