@@ -21,15 +21,15 @@ public abstract class Locatable {
 	}
 	
 	public BigDecimal getDistanceTo(Locatable other) {
-		return Math.sqrt((this.x - other.x)*(this.x - other.x) + 
-				(this.y - other.y)*(this.y - other.y) + 
-						(this.z - other.z)*(this.z - other.z));
+		return new BigDecimal(Math.sqrt((this.x.subtract(other.x)).pow(2).add(
+				(this.y.subtract(other.y)).pow(2)).add(
+						(this.z.subtract(other.z)).pow(2)).doubleValue()));
 	}
 	
-	public void displace(Vector3d displacement, double milliseconds) {
-		x += displacement.getX() * (milliseconds / 1000);
-		y += displacement.getY() * (milliseconds / 1000);
-		z += displacement.getZ() * (milliseconds / 1000);
+	public void displace(Vector3d displacement, BigDecimal milliseconds) {
+		x = x.add(displacement.getX().multiply(milliseconds.divide(new BigDecimal(1000))));
+		y = y.add(displacement.getY().multiply(milliseconds.divide(new BigDecimal(1000))));
+		z = z.add(displacement.getZ().multiply(milliseconds.divide(new BigDecimal(1000))));
 	}
 	
 	public BigDecimal getX() {

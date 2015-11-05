@@ -1,6 +1,7 @@
 package simulation;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,14 +24,14 @@ public class Atom extends Locatable implements TimeUpdatable {
 	}
 	
 	public Vector3d getResultantForce() {
-		BigDecimal x = 0;
-		BigDecimal y = 0;
-		BigDecimal z = 0;
+		BigDecimal x = BigDecimal.ZERO;
+		BigDecimal y = BigDecimal.ZERO;
+		BigDecimal z = BigDecimal.ZERO;
 		
 		for (Vector3d force : appliedForces) {
-			x += force.getX();
-			y += force.getY();
-			z += force.getZ();
+			x = x.add(force.getX());
+			y = y.add(force.getY());
+			z = z.add(force.getZ());
 		}
 		
 		return new Vector3d(x, y, z);
@@ -38,7 +39,7 @@ public class Atom extends Locatable implements TimeUpdatable {
 	
 	public BigDecimal getDistanceTo(Atom other) {
 		// finish implementation
-		return 0;
+		return new BigDecimal(Math.sqrt((this.getX().subtract(other.getX()).pow(2).add(this.getY().subtract(other.getY()).pow(2)).add(this.getZ().subtract(other.getZ()).pow(2)).doubleValue())));
 	}
 	
 	public void applyForce(Vector3d force) {
@@ -62,7 +63,7 @@ public class Atom extends Locatable implements TimeUpdatable {
 	public void update() {
 		force = getResultantForce();
 		System.out.println(force.getMagnitude());
-		Vector3d acceleration = force.scalarMultiply(1/(1000 * grams));
+		Vector3d acceleration = force.scalarMultiply(BigDecimal.ONE.divide(new BigDecimal(1000).multiply(grams), 100,RoundingMode.HALF_UP));
 		velocity.add(acceleration);
 	}
 

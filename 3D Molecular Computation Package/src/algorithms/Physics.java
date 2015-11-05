@@ -1,6 +1,7 @@
 package algorithms;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Physics {
 	private static final BigDecimal COULOMBS_CONSTANT = new BigDecimal(8.9875517873681764e9);
@@ -18,6 +19,6 @@ public class Physics {
 	 */
 	
 	public static BigDecimal calculateCoulombicAttractionNewtons(BigDecimal charge1, BigDecimal charge2, BigDecimal distance) {
-		return (COULOMBS_CONSTANT.multiply(charge1.multiply(charge2).abs()).divide(distance).divide(distance));
+		return (COULOMBS_CONSTANT.multiply(charge1.multiply(charge2).abs()).divide(distance, 10 ,RoundingMode.HALF_UP).divide(distance, 10 ,RoundingMode.HALF_UP));
 	}
 }
