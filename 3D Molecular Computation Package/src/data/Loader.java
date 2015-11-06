@@ -5,31 +5,23 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Loader{
-	
+public class Loader {
+
 	public void readFile(String filePath) {
 
-		BufferedReader br = null;
-		
-		try {
+		try (BufferedReader br = new BufferedReader(new FileReader(filePath));) {
 
 			String currentLine;
 
-			br = new BufferedReader(new FileReader(filePath));
-
+			// prints every line of txt file
 			while ((currentLine = br.readLine()) != null) {
+				// what you want it to do with every line
 				System.out.println(currentLine);
 			}
 
 		} catch (IOException e) {
-			System.err.println("Could not read file!");
+			System.out.println(e.getMessage());
 			e.printStackTrace();
-		} finally {
-			try {
-				br.close();
-			} catch (IOException ex) {
-				ex.printStackTrace();
-			}
 		}
 
 	}
