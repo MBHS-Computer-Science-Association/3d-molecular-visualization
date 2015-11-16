@@ -5,17 +5,17 @@ import java.math.BigDecimal;
 public class UpdateLoop implements Runnable{
 
 	public void update() {
-//		System.out.println("updating without time");
-//		for (Updatable a : MolecularSimulation.entityList) {
-//			if (a instanceof Atom) {
-//				((Atom) a).appliedForces.clear();
-//				for (Updatable b : MolecularSimulation.entityList) {
-//					if (b instanceof Atom && !b.equals(a)) {
-//						((Atom) a).applyForce(((Atom) a).getCoulombicForcesWith((Atom) b));
-//					}
-//				}
-//			}
-//		}
+		System.out.println("updating without time");
+		for (Updatable a : MolecularSimulation.entityList) {
+			if (a instanceof Atom) {
+				((Atom) a).appliedForces.clear();
+				for (Updatable b : MolecularSimulation.entityList) {
+					if (b instanceof Atom && !b.equals(a)) {
+						((Atom) a).applyForce(((Atom) a).getCoulombicForcesWith((Atom) b));
+					}
+				}
+			}
+		}
 	}
 	
 	public void update(double milliseconds) {

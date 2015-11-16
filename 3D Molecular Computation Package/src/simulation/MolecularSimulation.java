@@ -12,9 +12,9 @@ public class MolecularSimulation {
 	public static List<Updatable> entityList;
 	
 	public static void main(String[] args) {
+		System.out.println(new BigDecimal(5e-9));
 		System.out.println(Physics.AVOGADROS_CONSTANT.doubleValue());
-		System.out.println(BigDecimal.ONE.divide(new BigDecimal(5), 10, RoundingMode.HALF_UP).doubleValue());
-		System.out.println(BigDecimal.ONE.divide(new BigDecimal("6"), 10 ,RoundingMode.HALF_UP).doubleValue());
+		System.out.println(Physics.calculateCoulombicAttractionNewtons(Physics.ELEMENTARY_CHARGE, Physics.ELEMENTARY_CHARGE, new BigDecimal(5e-9)));
 		System.out.println("Heyyyy");
 		entityList = new ArrayList<>();
 		entityList.add(new Atom(BigDecimal.ONE.multiply(Physics.ELEMENTARY_CHARGE), BigDecimal.ONE.negate().divide(Physics.AVOGADROS_CONSTANT, 1000 ,RoundingMode.HALF_UP), BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO));
