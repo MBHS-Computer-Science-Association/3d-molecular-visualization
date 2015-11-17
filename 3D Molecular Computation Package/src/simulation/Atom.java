@@ -38,7 +38,6 @@ public class Atom extends Locatable implements TimeUpdatable {
 	}
 	
 	public BigDecimal getDistanceTo(Atom other) {
-		// finish implementation
 		return new BigDecimal(Math.sqrt((this.getX().subtract(other.getX()).pow(2).add(this.getY().subtract(other.getY()).pow(2)).add(this.getZ().subtract(other.getZ()).pow(2)).doubleValue())));
 	}
 	
