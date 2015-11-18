@@ -1,0 +1,24 @@
+package molecular;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import simulation.Element;
+
+public class Bond {
+	String id;
+	
+	Set<Element> elements;
+	
+	public Bond(Element e1, Element e2) {
+		elements = new HashSet<>();
+		elements.add(e1);
+		elements.add(e2);
+	}
+	
+	public  
+	
+	public String toString() {
+		return elements;
+	}
+}

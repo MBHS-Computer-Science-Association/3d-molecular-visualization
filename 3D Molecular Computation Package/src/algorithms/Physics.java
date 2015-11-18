@@ -19,6 +19,6 @@ public class Physics {
 	 */
 	
 	public static BigDecimal calculateCoulombicAttractionNewtons(BigDecimal charge1, BigDecimal charge2, BigDecimal distance) {
-		return (COULOMBS_CONSTANT.multiply(charge1.multiply(charge2).abs()).divide(distance, 10 ,RoundingMode.HALF_UP).divide(distance, 10 ,RoundingMode.HALF_UP));
+		return (COULOMBS_CONSTANT.multiply(charge1.multiply(charge2).abs()).divide(distance, 100 ,RoundingMode.HALF_UP).divide(distance, 100 ,RoundingMode.HALF_UP));
 	}
 }

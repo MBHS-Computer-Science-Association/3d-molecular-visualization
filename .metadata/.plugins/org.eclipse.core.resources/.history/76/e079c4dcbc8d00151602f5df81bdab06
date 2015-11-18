@@ -1,0 +1,21 @@
+package molecular;
+
+import java.util.Set;
+
+import simulation.Element;
+
+public class Bond {
+	String id;
+	
+	Set<Element> elements;
+	
+	public Bond(String s) {
+		id = s;
+	}
+	
+	public  
+	
+	public String toString() {
+		return id + " " + elements;
+	}
+}
