@@ -11,6 +11,7 @@ import motion.Vector3d;
 import simulation.Atom;
 import simulation.Element;
 import simulation.MolecularSimulation;
+import simulation.UpdateLoop;
 
 public class DemoTester {
 	
