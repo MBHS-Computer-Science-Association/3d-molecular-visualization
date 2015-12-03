@@ -10,8 +10,8 @@ import motion.Vector3d;
 
 public class MolecularSimulation {
 	public static List<Updatable> entityList;
-	
-	public static void main(String[] args) {
+
+	public static void startSimulation() {
 		System.out.println(new BigDecimal(5e-9));
 		System.out.println(Physics.AVOGADROS_CONSTANT.doubleValue());
 		System.out.println(Physics.calculateCoulombicAttractionNewtons(Physics.ELEMENTARY_CHARGE, Physics.ELEMENTARY_CHARGE, new BigDecimal(5e-9)));
@@ -22,5 +22,5 @@ public class MolecularSimulation {
 		((Atom) entityList.get(0)).applyForce(new Vector3d(new BigDecimal(1), new BigDecimal(1), new BigDecimal(1)));
 		Thread updateLoop = new Thread(new UpdateLoop(), "Update");
 		updateLoop.start();
-	}
+	}	
 }
