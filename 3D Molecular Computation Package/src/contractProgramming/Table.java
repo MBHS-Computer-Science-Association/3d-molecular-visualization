@@ -1,16 +1,13 @@
-package chemistry;
-import java.util.ArrayList;
+package contractProgramming;
 
 
-public class Element{
+
+public class Table{
 	
 	
-	public Element(){
-		
-	}
 	
-	public String[] getInfo(int atomicNum) {
-		String[] name=new String[2];
+	public static String[] getInfo(int atomicNum) {
+		String[] name = new String[2];
 		if(atomicNum>0&&atomicNum<110){
 		
 		switch(atomicNum){
@@ -458,8 +455,457 @@ public class Element{
 		return name;
 	}
 	
+	public static String[] getElectronegativity(int atomicNum) {
+		String[] name = new String[2];
+		if(atomicNum>0&&atomicNum<110){
+		
+		switch(atomicNum){
+			case 1:
+				name[0]="H";
+				name[1]= "2.20"  ;
+			break;
+			case 2:
+				name[0]="He";
+				name[1]=  "0.00" ;
+			break;
+			case 3:
+				name[0]="Li";
+				name[1]= "0.98"  ;
+			break;
+			case 4:
+				name[0]="Be";
+				name[1]=  "1.57" ;
+			break;
+			case 5:
+				name[0]="B";
+				name[1]=  "2.04" ;
+			break;
+			case 6:
+				name[0]="C";
+				name[1]= "2.55"  ;
+			break;
+			case 7:
+				name[0]="N";
+				name[1]=  "3.04" ;
+			break;
+			case 8:
+				name[0]="O";
+				name[1]= "3.44";
+			break;
+			case 9:
+				name[0]="F";
+				name[1]= "3.98";
+			break;
+			case 10:
+				name[0]="Ne";
+				name[1]= "0.0";
+			break;
+			case 11:
+				name[0]="Na";
+				name[1]= "0.93";
+			break;
+			case 12:
+				name[0]="Mg";
+				name[1]= "1.31";
+			break;
+			case 13:
+				name[0]="Al";
+				name[1]= "1.61";
+			break;
+			case 14:
+				name[0]="Si";
+				name[1]= "1.90";
+			break;
+			case 15:
+				name[0]="P";
+				name[1]= "2.19";
+			break;
+			case 16:
+				name[0]="S";
+				name[1]= "2.58";
+			break;
+			case 17:
+				name[0]="Cl";
+				name[1]= "3.16";
+			break;
+			case 18:
+				name[0]="Ar";
+				name[1]= "0.00";
+			break;
+			case 19:
+				name[0]="K";
+				name[1]= "0.82";
+			break;
+			case 20:
+				name[0]="Ca";
+				name[1]= "1.00";
+			break;
+			case 21:
+				name[0]="Sc";
+				name[1]= "1.36";
+			break;
+			case 22:
+				name[0]="Ti";
+				name[1]= "1.54";
+			break;
+			case 23:
+				name[0]="V";
+				name[1]= "1.63";
+			break;
+			case 24:
+				name[0]="Cr";
+				name[1]= "1.66";
+			break;
+			case 25:
+				name[0]="Mn";
+				name[1]= "1.55";
+			break;
+			case 26:
+				name[0]="Fe";
+				name[1]= "1.83";
+			break;
+			case 27:
+				name[0]="Co";
+				name[1]= "1.88";
+			break;
+			case 28:
+				name[0]="Ni";
+				name[1]= "1.91";
+			break;
+			case 29:
+				name[0]="Cu";
+				name[1]= "1.90";
+			break;
+			case 30:
+				name[0]="Zn";
+				name[1]= "1.65";
+			break;
+			case 31:
+				name[0]="Ga";
+				name[1]= "1.81";
+			break;
+			case 32:
+				name[0]="Ge";
+				name[1]= "2.01";
+			break;
+			case 33:
+				name[0]="As";
+				name[1]= "2.18";
+			break;
+			case 34:
+				name[0]="Se";
+				name[1]= "2.55";
+			break;
+			case 35:
+				name[0]="Br";
+				name[1]= "2.96";
+			break;
+			case 36:
+				name[0]="Kr";
+				name[1]= "3.00";
+			break;
+			case 37:
+				name[0]="Rb";
+				name[1]= "0.82";
+			break;
+			case 38:
+				name[0]="Sr";
+				name[1]= "0.95";
+			break;
+			case 39:
+				name[0]="Y";
+				name[1]= "1.22";
+			break;
+			case 40:
+				name[0]="Zr";
+				name[1]= "1.33";
+			break;
+			case 41:
+				name[0]="Nb";
+				name[1]= "1.6";
+			break;
+			case 42:
+				name[0]="Mo";
+				name[1]= "2.16";
+			break;
+			case 43:
+				name[0]="Tc";
+				name[1]= "1.9";
+			break;
+			case 44:
+				name[0]="Ru";
+				name[1]= "2.2";
+			break;
+			case 45:
+				name[0]="Rh";
+				name[1]= "2.28";
+			break;
+			case 46:
+				name[0]="Pd";
+				name[1]= "2.20";
+			break;
+			case 47:
+				name[0]="Ag";
+				name[1]= "1.93";
+			break;
+			case 48:
+				name[0]="Cd";
+				name[1]= "1.69";
+			break;
+			case 49:
+				name[0]="In";
+				name[1]= "1.78";
+			break;
+			case 50:
+				name[0]="Sn";
+				name[1]= "1.96";
+			break;
+			case 51:
+				name[0]="Sb";
+				name[1]= "2.05";
+			break;
+			case 52:
+				name[0]="Te";
+				name[1]= "2.1";
+			break;
+			case 53:
+				name[0]="I";
+				name[1]= "2.66";
+			break;
+			case 54:
+				name[0]="Xe";
+				name[1]= "2.6";
+			break;
+			case 55:
+				name[0]="Cs";
+				name[1]= "0.79";
+			break;
+			case 56:
+				name[0]="Ba";
+				name[1]= "0.89";
+			break;
+			case 57:
+				name[0]="La";
+				name[1]= "1.1";
+			break;
+			case 58:
+				name[0]="Ce";
+				name[1]= "1.12";
+			break;
+			case 59:
+				name[0]="Pr";
+				name[1]= "1.13";
+			break;
+			case 60:
+				name[0]="Nd";
+				name[1]= "1.14";
+			break;
+			case 61:
+				name[0]="Pm";
+				name[1]= "1.13";
+			break;
+			case 62:
+				name[0]="Sm";
+				name[1]= "1.17";
+			break;
+			case 63:
+				name[0]="Eu";
+				name[1]= "1.2";
+			break;
+			case 64:
+				name[0]="Gd";
+				name[1]= "1.2";
+			break;
+			case 65:
+				name[0]="Tb";
+				name[1]= "1.1";
+			break;
+			case 66:
+				name[0]="Dy";
+				name[1]= "1.22";
+			break;
+			case 67:
+				name[0]="Ho";
+				name[1]= "1.23";
+			break;
+			case 68:
+				name[0]="Er";
+				name[1]= "1.24";
+			break;
+			case 69:
+				name[0]="Tm";
+				name[1]= "1.25";
+			break;
+			case 70:
+				name[0]="Yb";
+				name[1]= "1.1";
+			break;
+			case 71:
+				name[0]="Lu";
+				name[1]= "1.27";
+			break;
+			case 72:
+				name[0]="Hf";
+				name[1]= "1.3";
+			break;
+			case 73:
+				name[0]="Ta";
+				name[1]= "1.5";
+			break;
+			case 74:
+				name[0]="W";
+				name[1]= "2.36";
+			break;
+			case 75:
+				name[0]="Re";
+				name[1]= "1.9";
+			break;
+			case 76:
+				name[0]="Os";
+				name[1]= "2.2";
+			break;
+			case 77:
+				name[0]="Ir";
+				name[1]= "2.20";
+			break;
+			case 78:
+				name[0]="Pt";
+				name[1]= "2.28";
+			break;
+			case 79:
+				name[0]="Au";
+				name[1]= "2.54";
+			break;
+			case 80:
+				name[0]="Hg";
+				name[1]= "2.00";
+			break;
+			case 81:
+				name[0]="Tl";
+				name[1]= "1.62";
+			break;
+			case 82:
+				name[0]="Pb";
+				name[1]= "1.87";
+			break;
+			case 83:
+				name[0]="Bi";
+				name[1]= "2.02";
+			break;
+			case 84:
+				name[0]="Po";
+				name[1]= "2.0";
+			break;
+			case 85:
+				name[0]="At";
+				name[1]= "2.2";
+			break;
+			case 86:
+				name[0]="Rn";
+				name[1]= "2.2";
+			break;
+			case 87:
+				name[0]="Fr";
+				name[1]= "0.7";
+			break;
+			case 88:
+				name[0]="Ra";
+				name[1]= "0.9";
+			break;
+			case 89:
+				name[0]="Ac";
+				name[1]= "1.1";
+			break;
+			case 90:
+				name[0]="Th";
+				name[1]= "1.3";
+			break;
+			case 91:
+				name[0]="Pa";
+				name[1]= "1.5";
+			break;
+			case 92:
+				name[0]="U";
+				name[1]= "1.38";
+			break;
+			case 93:
+				name[0]="Np";
+				name[1]= "1.36";
+			break;
+			case 94:
+				name[0]="Pu";
+				name[1]= "1.28";
+			break;
+			case 95:
+				name[0]="Am";
+				name[1]= "1.13";
+			break;
+			case 96:
+				name[0]="Cm";
+				name[1]= "1.28";
+			break;
+			case 97:
+				name[0]="Bk";
+				name[1]= "1.3";
+			break;
+			case 98:
+				name[0]="Cf";
+				name[1]= "1.3";
+			break;
+			case 99:
+				name[0]="Es";
+				name[1]= "1.3";
+			break;
+			case 100:
+				name[0]="Fm";
+				name[1]= "1.3";
+			break;
+			case 101:
+				name[0]="Md";
+				name[1]= "1.3";
+			break;
+			case 102:
+				name[0]="No";
+				name[1]= "1.3";
+			break;
+			case 103:
+				name[0]="Lr";
+				name[1]= "1.3";
+			break;
+			case 104:
+				name[0]="Rf";
+				name[1]= "-1";
+			break;
+			case 105:
+				name[0]="Db";
+				name[1]= "-1";
+			break;
+			case 106:
+				name[0]="Sg";
+				name[1]= "-1";
+			break;
+			case 107:
+				name[0]="Bh";
+				name[1]= "-1";
+			break;
+			case 108:
+				name[0]="Hs";
+				name[1]= "-1";
+			break;
+			case 109:
+				name[0]="Mt";
+				name[1]= "-1";
+			break;
+					}
+		
+	}else{
+	name= null;	
+	}
+		return name;
+	}
 	
-	public String[] getInfo(String symbol) {
+	
+	public static String[] getInfo(String symbol) {
 		String[] name=new String[2];
 		
 		

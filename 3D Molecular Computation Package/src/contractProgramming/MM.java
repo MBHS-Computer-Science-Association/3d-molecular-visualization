@@ -1,6 +1,8 @@
-package chemistry;
+package contractProgramming;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import static contractProgramming.Table.getInfo;
 
 public class MM {
 	public double grams = -1;
@@ -20,7 +22,7 @@ public class MM {
 		Scanner inquire = new Scanner(System.in);
 
 		ConvertToDouble convert = new ConvertToDouble();
-		Element findName = new Element();
+		
 
 		// user input VVVVVVV
 		/*
@@ -89,11 +91,10 @@ public class MM {
 		String[] two = new String[2];
 		for (int x = 0; x < names.size(); x++) {
 			temp = names.get(count);
-			two = findName.getInfo(temp);
 			for (int a = 48; a <= 57; a++) {
 				if (temp.charAt(0) == a) {
 					an = (int) convert.decipherMM(temp);
-					two = findName.getInfo(an);
+					two = getInfo(an);
 				}
 			}
 
